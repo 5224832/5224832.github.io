@@ -16,14 +16,14 @@
  .wsite-logo a:hover { color: #484848; }
  a { color: #5199a8; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
  a:hover { color: #8dc7d3; }
- #content-wrapper { width: 960px; margin: auto; }
+ #content-wrapper { margin: auto; }
  #content, #footer-content{ padding: 4em 1.6em; margin: 0 auto; box-sizing: border-box; }
  .wsite-form-container { margin-top: 0 !important; }
  .paragraph ul, .paragraph ol { padding-left: 3em !important; }
  #footer { font-family: 'Raleway', sans-serif; font-size: 14px; background: #f9f9f9; }
- #footer-content { width: 960px; margin: auto; }
+ #footer-content { margin: auto; }
  #footer h2 { font-family: 'Raleway', sans-serif; font-size: 18px; text-transform: uppercase; }
- #navigation { padding-bottom: 40px; width: 960px; margin: auto; text-align: center; text-transform: uppercase; overflow: hidden; font-family: 'Raleway', sans-serif; font-size: 13px; }
+ #navigation { padding-bottom: 40px; margin: auto; text-align: center; text-transform: uppercase; overflow: hidden; font-family: 'Raleway', sans-serif; font-size: 13px; }
  #navigation a{ display:inline-block; padding:10px 14px; }
  #navigation ul:before, #navigation ul:after { background-color: #d0d0d0; content: ""; display: inline-block; height: 1px; bottom: .1em; position: relative; vertical-align: middle; width: 50%; }
  #navigation ul:before { right: 29px; margin-left: -50%; }
@@ -130,7 +130,7 @@
  .navmobile-wrapper{ display: none; }
  .navmobile-wrapper .nav-trigger { padding: 0; }
  .navmobile-wrapper label{ padding: 10px; }
- @media (max-width:1024px){
+ @media (){
  #navigation, #banner, #content-wrapper, #footer-content{ width:auto; min-width: 100%; }
  #wrapper{ box-sizing:border-box; }
  #wrapper { position:relative; left:0%; -webkit-transition: left 0.3s ease-in-out !important; -moz-transition: left 0.3s ease-in-out !important; -o-transition: left 0.3s ease-in-out !important; -ms-transition: left 0.3s ease-in-out !important; transition: left 0.3s ease-in-out !important; }
@@ -140,7 +140,7 @@
  .blog-sidebar{ padding-left:40px; }
  #wsite-mini-cart .wsite-product-image{ padding:10px; }
  }
- @media (max-width:992px){
+ @media (){
  h2, #wsite-search-header h2{ font-size:1.4em; margin-bottom:7px; padding-top:0; display:block; }
  #content .paragraph font { font-size: inherit; }
  .wsite-com-content{ padding:0; }
