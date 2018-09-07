@@ -350,12 +350,12 @@ function layoutUpdate() {
 	if (document.getElementById('download'))
 		height += document.getElementById('download').offsetHeight;
 	var spaceHeight = screenSize.height - height;
-	$('.holder-1').css({'height': spaceHeight * 0.18});
-	$('.holder-2').css({'height': spaceHeight * 0.18});
-	$('.holder-3').css({'height': spaceHeight * 0.20});
-	$('.holder-4').css({'height': spaceHeight * 0.15});
-	$('.holder-5').css({'height': spaceHeight * 0.14});
-	$('.holder-6').css({'height': spaceHeight * 0.15});
+	// $('.holder-1').css({'height': spaceHeight * 0.18});
+	// $('.holder-2').css({'height': spaceHeight * 0.18});
+	// $('.holder-3').css({'height': spaceHeight * 0.20});
+	// $('.holder-4').css({'height': spaceHeight * 0.15});
+	// $('.holder-5').css({'height': spaceHeight * 0.14});
+	// $('.holder-6').css({'height': spaceHeight * 0.15});
 	if (parseInt($('.spaceholder').css('height')) < 6) {
 		$('.spaceholder').css({'height': 6});
 	}
