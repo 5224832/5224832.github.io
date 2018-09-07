@@ -1,0 +1,377 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-size: 14px;
+	font-family: "方正兰亭准黑_GBK";
+}
+
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*layout*/
+
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
+	overflow: auto;
+}
+
+.spaceholder {
+	height: 2.285rem;
+}
+
+#info {
+	padding: 0 4rem;
+	text-align: center;
+}
+
+#album {
+	position: relative;
+	margin: auto;
+	width: 15rem;
+	height: 15rem;
+	overflow: hidden;
+}
+
+#lrc {
+	padding: 0 2.78rem;
+	height: 4.2rem;
+	overflow: hidden;
+	/*-webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0)), color-stop(25%, rgba(0,0,0,1)), color-stop(75%, rgba(0,0,0,1)));*/
+}
+
+#player_controller {
+	position: relative;
+	margin: 0 2.78rem;
+	height: 1rem;
+}
+
+#download {
+}
+
+#EMUI {
+	height: 1.85rem;
+	text-align: center;
+}
+
+
+#info h1 {
+	margin: 0 0 0.5rem;
+	font-size: 1.14rem;
+	font-weight: normal;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+#singer {
+	margin: 0 0 0.5rem;
+	font-size: 0.92rem;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+#EMUI img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	height: 100%;
+}
+
+/*components*/
+
+#singer a {
+	color: rgba(255, 255, 255, 0.6);
+	text-decoration: none;
+}
+
+#source {
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 0.64rem;
+}
+
+#source img {
+	margin-bottom: 2px;
+	margin-right: 3px;
+	padding: 0;
+	border:0;
+	outline: 0;
+	width: 11px;
+	height: 11px;
+	vertical-align: middle;
+}
+
+.cd {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.cd img {
+	opacity: 0;
+}
+
+.cd img.show {
+	opacity: 1;
+}
+
+.downloadButton {
+	display: block;
+	margin: 0 5rem 0.71rem;
+	height: 3.36rem;
+	line-height: 3.36rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.285rem;
+	text-decoration: none;
+	border: 0.1rem solid rgba(255, 255, 255, 0.43);
+	border-radius: 0.67rem;
+}
+
+.downloadButton:hover, .downloadButton:active {
+}
+
+/*lrc*/
+#lrc_list {
+	margin: 0;
+	padding: 0;
+}
+
+#lrc_list li, .nolrc {
+	list-style-type: none;
+	text-align: center;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	white-space: nowrap;
+	overflow: hidden;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+#lrc_list li.hover {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+/*bg*/
+#bg_blur {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	overflow: hidden;
+}
+
+#bg_image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+
+#bg_image {
+	-webkit-filter: blur(3.57rem); /* Chrome, Opera */
+	-moz-filter: blur(3.57rem);
+	-o-filter: blur(3.57rem);
+	-ms-filter: blur(3.57rem);
+	filter: blur(3.57rem);
+	/*filter: url(../images/blur-filter.svg#blur);*/
+
+	-webkit-transform: scale(1.1); /* Saf3.1+, Chrome */
+	-moz-transform: scale(1.1);  /* FF3.5+ */
+	-ms-transform: scale(1.1);  /* IE9 */
+	-o-transform: scale(1.1);  /* Opera 10.5 */
+	transform: scale(1.1);
+
+	background-size: cover;
+	background-position: center;
+}
+
+#overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.darkmask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+/*hidden*/
+
+#hidden {
+	opacity: 0;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+}
+
+/*jplayer*/
+.jp-button-group {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.jp-play, .jp-pause {
+	display: none;
+	position: absolute;
+	top: 34%;
+	left: 34%;
+	width: 32%;
+	height: 32%;
+	z-index: 20;
+}
+
+.jp-play img, .jp-pause img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.jp-current-time {
+	position: absolute;
+	right: 100%;
+	font-size: 0.71rem;
+	line-height: 1rem;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.jp-duration {
+	position: absolute;
+	left: 100%;
+	font-size: 0.71rem;
+	line-height: 1rem;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.jp-progress-bg {
+	position: absolute;
+	left: 0.285rem;
+	right: 0.285rem;
+	top: 0.425rem;
+	height: 0.15rem;
+	background: rgba(255,255,255,0.3);
+	overflow: hidden;
+}
+
+.jp-progress-passed {
+	margin-left: -100%;
+	height: 100%;
+	width: 100%;
+	background: #26c0c6;
+}
+
+.jp-progress {
+	position: relative;
+	margin: 0 0.285rem;
+	padding: 0 0.6rem;
+	height: 1rem;
+	z-index: 2;
+}
+
+.jp-seek-bar {
+	height: 0.15rem;
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.jp-play-bar {
+	height: 0.15rem;
+	background: #26c0c6;
+}
+
+/*slider*/
+.noUi-base {
+	height: 100%;
+	position: relative;
+}
+
+.noUi-origin {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+}
+
+.noUi-handle {
+	border-radius: 0.6rem;
+	background: #D1CFD0;
+	color: transparent;
+	cursor: default;
+}
+
+.noUi-horizontal .noUi-handle {
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-left: -0.6rem;
+	margin-top: -0.1rem;
+}
+
+/*animation*/
+.playing {
+	-webkit-backface-visibility:visible;
+	-webkit-transform-origin:7.5rem 7.5rem;
+	-webkit-animation:cover 6s 0s infinite linear normal none;
+}
+
+@-webkit-keyframes cover {
+	0%{
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+	} 
+}
+
+.fadeOut {
+	opacity: 0;
+	-webkit-animation:fadeOut 0.5s .2s ease both;
+	-moz-animation:fadeOut 0.5s .2s ease both;
+}
+
+@-webkit-keyframes fadeOut {
+	0%{opacity:1}
+	100%{opacity:0}
+}
+
+.fadeIn {
+	opacity: 1;
+	-webkit-animation:fadeIn 0.5s .2s ease both;
+	-moz-animation:fadeIn 0.5s .2s ease both;
+}
+
+@-webkit-keyframes fadeIn {
+	0%{opacity:0}
+	100%{opacity:1}
+}

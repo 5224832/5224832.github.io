@@ -10,20 +10,141 @@
 <meta property="og:url" content="http://www.jianbei.xyz">
 <link rel="stylesheet" type="text/css" href="images/main_style.css" title="wsite-theme-css">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<link id='style' rel="stylesheet" media="screen" href="client_player/css/portrait.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" media="screen" href="client_player/css/ie.css">
+<![endif]-->
+<script src="client_player/js/jquery-1.9.1.min.js"></script>
+<script src="client_player/js/jplayer/jquery.jplayer.min.js"></script>
+<script src="client_player/js/jplayer/jquery.lrc2.js"></script>
+<script src="client_player/js/nouislider/jquery.nouislider.min.js"></script>
+<script src="client_player/js/player.js"></script>
+<script type="text/javascript">
+var defaultAlbumUrl = 'client_player/images/icon_album_default.png';
+
+$(function() {
+	Init({
+		musicUrl: "008d842d67982a9842717a39777f8346.mp3",
+		lrcUrl: "",
+		largeImgUrl: "images/1484211.jpeg" === "" ? defaultAlbumUrl : "images/1484211.jpeg",
+		middleImgUrl: "images/1484211.jpeg" === "" ? defaultAlbumUrl : "images/1484211.jpeg",
+		smallImgUrl: "client_player/images/big_ms_3212_1367130381564.jpg.auto.100x100.jpg" === "" ? defaultAlbumUrl : "client_player/images/big_ms_3212_1367130381564.jpg.auto.100x100.jpg",
+		downUrl: "008d842d67982a9842717a39777f8346.mp3",
+		carrierCode: 3,
+		isWeixin: "",
+		swfUrl: "client_player/js/jplayer"
+	});
+});
+</script>
+
 <style type="text/css">
 * { margin: 0; padding: 0; }
 html, body { height: 100%; width: 100%; }  
 canvas { display: block; } 
+#logowebkit{
+    width:210px;     
+    height: 210px;     
+    border-radius:140px;     
+    -webkit-animation:run 6s linear 0s infinite;
+}     
+#logowebkit:hover{
+    -webkit-animation-play-state:paused;     
+}     
+@-webkit-keyframes run{     
+    from{     
+        -webkit-transform:rotate(0deg);     
+    }     
+    to{     
+        -webkit-transform:rotate(360deg);
+    }     
+}
 </style>
 </head>
-<body class="tall-header  wsite-page-index wsite-theme-light" style="background-color: black;">
+<body class="tall-header  wsite-page-index wsite-theme-light" style="background-color: black;" onselectstart="return false">
 <div class="body-wrap" style="position:absolute;width:100%">
-		<div id="header">
-			<div id="sitename"><span class="wsite-logo"><a href="http://www.jianbei.xyz">
-			<span id="wsite-title">杰克船长</span></a></span>
-			<p style="margin-top:20px;"><img src="images/1484211.jpeg" style="border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;"></p>
-			<h5 style="margin-top:20px;font-size:14px;">德养运 善养福</h5>
+		<div>
+			<div id="sitename">
+			<!-- <span class="wsite-logo"><a href="http://www.jianbei.xyz"><span id="wsite-title">杰克船长</span></a></span>
+			<p id="logowebkit" style="margin-top:20px;"><img src="images/1484211.jpeg" style="width:210px;height:210px;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;"></p> -->
+			<div class="spaceholder holder-1"></div>
+			<div id="info">
+				<h1>舞底线</h1>
+				<div id="singer"></div>
+				<div id="source">音乐来源</div>
 			</div>
+			<div class="spaceholder holder-2"></div>
+			<div id="album">
+				<div class="cd" id="logowebkit"><img></div>
+				<div class="jp-button-group" style="z-index:99999;">
+					<span class="jp-play"><img src="client_player/images/play.png"></span>
+					<span class="jp-pause"><img src="client_player/images/pause.png"></span>
+				</div>
+			</div>
+			<!-- <h5 style="margin-top:20px;font-size:14px;">德养运 善养福</h5> -->
+			<div class="spaceholder holder-3"></div>
+			<div id="lrc">
+				<ul id='lrc_list'></ul>
+			</div>
+			<div class="spaceholder holder-4"></div>
+			<div id="player_controller">
+				<div class="jp-current-time"></div>
+				<div class="jp-duration"></div>
+				<div class="jp-progress-bg">
+					<div class="jp-progress-passed"></div>
+				</div>
+				<div id="progress" class="jp-progress"></div>
+			</div>
+			</div>
+		</div>
+		<div id="bg_blur" style="display: none;">
+			<img id="bg_image">
+			<div class="darkmask"></div>
+		</div>
+		<div id='overlay'>
+			<img id="hy-topbar" src="client_player/images/image_share_download.png" width="100%">
+		</div> 
+		<div id="hidden">
+				<div id="jquery_jplayer_single"></div>
+				<div id="ot" style="float: left">　</div>
+				<textarea id="lrc_content">[ti:舞底线]
+		[ar:吴莫愁]
+		[al:]
+		[00:00.001]舞底线 - 吴莫愁
+		[00:00.50]曲:高世章，词:岑伟宗
+		[00:00.90]爱音乐，爱生活
+		[00:15.44]米谷吧帅哥还是怪咖
+		[00:19.91]奴古吧来世界就要开趴
+		[00:22.84]他古吧爽快摇一下
+		[00:26.54]要立马立马立马听我吧
+		[00:30.49]无底线恰恰
+		[00:32.49]无极限趴趴
+		[00:34.34]就像变了榴梿侬就甭害怕
+		[00:38.93]无底线恰恰
+		[00:39.99]无极限趴趴
+		[00:41.89]不管什么尽管燃烧吧
+		[00:44.59]咔嚓
+		[00:45.89]哥哥哥不在香格里拉
+		[00:49.45]姐姐姐也没有什么关卡
+		[00:53.30]啥啥啥
+		[00:54.75]给节奏融化
+		[00:56.95]来熊熊熊熊熊抱一个吧
+		[01:08.50]无底线恰恰
+		[01:10.35]无极限趴趴
+		[01:12.35]就像变了榴梿侬就甭害怕
+		[01:16.20]无底线恰恰
+		[01:18.59]无极限趴趴
+		[01:19.96]不管什么尽管燃烧吧
+		[01:22.66]咔嚓
+		[01:23.86]米谷吧谁抢不到沙发
+		[01:27.56]卡卡古吧
+		[01:28.96]不咬牙也不尴尬
+		[01:31.36]他古吧
+		[01:32.76]矫情不拉搭
+		[01:35.11]来吧舞吧舞吧舞吧舞吧
+		[01:37.46]舞吧舞吧舞吧舞吧舞吧舞吧舞吧舞吧舞吧
+		[01:41.87]舞底线舞吧</textarea>
+				<iframe id="downframe"></iframe>
 		</div>
 		<div id="wrapper">
 			<div class="bg-wrapper">
@@ -72,10 +193,10 @@ canvas { display: block; }
 	window.onload = function() {
 	  var width,height,
 	  canvas = document.getElementById("canvas");
-	  canvas.width = width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-	  canvas.height = height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-	  var ctx = canvas.getContext('2d');
-	  var num = Math.ceil(width / 10);
+	  canvas.width = width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; // 宽
+	  canvas.height = height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; // 高
+	  var ctx = canvas.getContext('2d'); // 返回一个用于在画布上绘图的环境
+	  var num = Math.ceil(width / 10); // 把屏幕的宽度分割成num份 每列的宽度是10px
 	  var y = Array(num).join(0).split('');
 	  var draw = function() {
 	        ctx.fillStyle = 'rgba(0,0,0,.05)'; //核心代码，创建黑色背景，透明度为0.05的填充色。

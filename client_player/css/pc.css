@@ -1,0 +1,12 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	/*width: 360px;
+	height: 640px;
+	position: relative;*/
+}
+
+a.downloadButton {
+	width: 180px;
+	margin: auto;
+}
