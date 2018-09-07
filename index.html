@@ -21,7 +21,7 @@ canvas { display: block; }
 		<div id="header">
 			<div id="sitename"><span class="wsite-logo"><a href="http://www.jianbei.xyz">
 			<span id="wsite-title">杰克船长</span></a></span>
-			<p style="margin-top:20px;"><img src="images/1484211.jpeg"></p>
+			<p style="margin-top:20px;"><img src="images/1484211.jpeg" style="border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;"></p>
 			<h5 style="margin-top:20px;font-size:14px;">德养运 善养福</h5>
 			</div>
 		</div>
@@ -84,7 +84,7 @@ canvas { display: block; }
 	        ctx.font = '10px Microsoft YaHei';//设置字体大小与family
 	        for(i = 0; i < num; i++) {
 	            var x = (i * 10) + 10;
-	            text = String.fromCharCode(65 + Math.random() * 62);
+	            text = String.fromCharCode(65 + Math.random() * 62); // 字符
 	            var y1 = y[i];
 	            ctx.fillText(text, x, y1);
 	            if(y1 > Math.random() * 10 * height) {
