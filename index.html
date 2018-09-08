@@ -12,7 +12,6 @@
 	<meta property="og:description" content="www.jianbei.xyz">
 	<meta property="og:url" content="http://www.jianbei.xyz">
 	<link rel="stylesheet" type="text/css" href="images/main_style.css" title="wsite-theme-css">
-
 	<link id='style' rel="stylesheet" media="screen" href="client_player/css/portrait.css">
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" media="screen" href="client_player/css/ie.css">
@@ -22,15 +21,15 @@
 	<script src="client_player/js/jplayer/jquery.lrc2.js"></script>
 	<script src="client_player/js/nouislider/jquery.nouislider.min.js"></script>
 	<script src="client_player/js/player.js"></script>
+	<script type="text/javascript" src="images/jquery.rotate.min.js"></script>
 	<script type="text/javascript">
 	var defaultAlbumUrl = 'client_player/images/icon_album_default.png';
-
 	$(function() {
 		Init({
 			musicUrl: "https://www.ztgyjj.com/uploadImgs/008d842d67982a9842717a39777f8346.mp3",
 			lrcUrl: "",
-			largeImgUrl: "images/1484211.jpeg" === "" ? defaultAlbumUrl : "images/1484211.jpeg",
-			middleImgUrl: "images/1484211.jpeg" === "" ? defaultAlbumUrl : "images/1484211.jpeg",
+			largeImgUrl: "images/jack.png" === "" ? defaultAlbumUrl : "images/jack.png",
+			middleImgUrl: "images/jack.png" === "" ? defaultAlbumUrl : "images/jack.png",
 			smallImgUrl: "client_player/images/big_ms_3212_1367130381564.jpg.auto.100x100.jpg" === "" ? defaultAlbumUrl : "client_player/images/big_ms_3212_1367130381564.jpg.auto.100x100.jpg",
 			downUrl: "https://www.ztgyjj.com/uploadImgs/008d842d67982a9842717a39777f8346.mp3",
 			carrierCode: 3,
@@ -41,7 +40,7 @@
 	</script>
 	<style type="text/css">
 		* { margin: 0; padding: 0; }
-		html, body { height: 100%; width: 100%;background-color: black;}  
+		html, body { height: 100%; width: 100%;background-color: black;}
 		canvas { display: block; } 
 		#logowebkit{
 		    width:210px;     
@@ -112,13 +111,12 @@
 					</li>
 					<li>
 						<a href="javascript:void();">
-							音乐
+							软件
 						</a>
 					</li>
-					
 					<li>
 						<a href="javascript:void();">
-							地产
+							音乐
 						</a>
 					</li>
 					<li>
@@ -128,7 +126,7 @@
 					</li>
 					<li>
 						<a href="javascript:void();">
-							软件
+							地产
 						</a>
 					</li>
 				</ul>
@@ -204,7 +202,29 @@
 		  canvas.height = height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; // 高
 		  var ctx = canvas.getContext('2d'); // 返回一个用于在画布上绘图的环境
 		  var num = Math.ceil(width / 10); // 把屏幕的宽度分割成num份 每列的宽度是10px
+		  var yNum = Math.ceil(height / 10);
 		  var y = Array(num).join(0).split('');
+		  var initBg = function() {
+		        ctx.fillStyle = 'rgba(0,0,0,.05)'; //核心代码，创建黑色背景，透明度为0.05的填充色。
+		        ctx.fillRect(0, 0, width, height);
+		        ctx.fillStyle = '#0f0'; //设置了字体颜色为绿色
+		        ctx.font = '10px Microsoft YaHei';//设置字体大小与family
+		        for (j = 1; j < yNum; j++) { // y
+		        	for(i = 0; i < num; i++) { // x
+			            var x = (i * 10) + 10;
+			            text = String.fromCharCode(65 + Math.random() * 62); // 字符
+			            var y1 = y[i];
+			            ctx.fillText(text, x, y1);
+			            if(y1 > Math.random() * 10 * height) {
+			                y[i] = 0;
+			            } else {
+			                y[i] = parseInt(y[i]) + 10;
+			            }
+			        }
+		        }
+
+		        
+		    }
 		  var draw = function() {
 		        ctx.fillStyle = 'rgba(0,0,0,.05)'; //核心代码，创建黑色背景，透明度为0.05的填充色。
 		        ctx.fillRect(0, 0, width, height);
@@ -222,12 +242,17 @@
 		            }
 		        }
 		    }
-		 
 		    ;(function(){
+		    	initBg();
+		    	setInterval(function(){
+				    angle +=3;
+				    $('.cd').rotate(angle);
+				}, 50);
 		        setInterval(draw, 100);
+		        var angle = 0;
 		    })();
-		 
 		}
+
 	</script>
 </body>
 </html>
