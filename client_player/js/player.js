@@ -264,9 +264,11 @@ function playerInit() {
 				});
 			}
 			ignoreTimeUpdate = false;
+			$("#logowebkit").addClass("logowebkit");
 		},
 		pause: function(event) {
 			ignoreTimeUpdate = true;
+			$("#logowebkit").removeClass("logowebkit");
 		},
 		timeupdate: function(event) {
 			if (!ignoreTimeUpdate) {

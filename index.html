@@ -16,12 +16,11 @@
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" media="screen" href="client_player/css/ie.css">
 	<![endif]-->
-	<script src="client_player/js/jquery-1.9.1.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="client_player/js/jplayer/jquery.jplayer.min.js"></script>
 	<script src="client_player/js/jplayer/jquery.lrc2.js"></script>
 	<script src="client_player/js/nouislider/jquery.nouislider.min.js"></script>
 	<script src="client_player/js/player.js"></script>
-	<script type="text/javascript" src="images/jquery.rotate.min.js"></script>
 	<script type="text/javascript">
 	var defaultAlbumUrl = 'client_player/images/icon_album_default.png';
 	$(function() {
@@ -43,8 +42,6 @@
 		html, body { height: 100%; width: 100%;background-color: black;}
 		canvas { display: block; } 
 		.logowebkit{
-		    width:210px;     
-		    height: 210px;     
 		    border-radius:140px;     
 		    -webkit-animation:run 6s linear 0s infinite;
 		}     
@@ -244,13 +241,7 @@
 		    }
 		    ;(function(){
 		    	initBg();
-		  //   	var angle = 0;
-		  //   	setInterval(function(){
-				//     angle +=3;
-				//     $('.cd').rotate(angle);
-				// }, 50);
 		        setInterval(draw, 100);
-		        $("#logowebkit").addClass("logowebkit");
 		    })();
 		}
 
