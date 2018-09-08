@@ -41,9 +41,9 @@ function Init(options) {
 		styleEl = document.getElementById('style');
 		getOrientation();
 		if (current_orientation === 'Portrait') {
-			styleEl.href = '../client_player/css/portrait.css';
+			styleEl.href = 'client_player/css/portrait.css';
 		} else if (current_orientation === 'Landscape') {
-			styleEl.href = '../client_player/css/landscape.css';
+			styleEl.href = 'client_player/css/landscape.css';
 		}
 		window.addEventListener("orientationchange", orientationChange, false);
 		window.addEventListener("resize", MobileResized, false);
@@ -70,7 +70,7 @@ function Init(options) {
 	}
 	if (sources[options.carrierCode]) {
 		if(4 == options.carrierCode){
-			$('#source').html('<img src="../client_player/images/xiami.png" />' + sources[options.carrierCode]);
+			$('#source').html('<img src="client_player/images/xiami.png" />' + sources[options.carrierCode]);
 		}else{
 			$('#source').html(sources[options.carrierCode]);
 		}
