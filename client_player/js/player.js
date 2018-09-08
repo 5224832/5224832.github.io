@@ -43,7 +43,7 @@ function Init(options) {
 		if (current_orientation === 'Portrait') {
 			styleEl.href = 'client_player/css/portrait.css';
 		} else if (current_orientation === 'Landscape') {
-			styleEl.href = 'client_player/css/landscape.css';
+			styleEl.href = 'client_player/css/portrait.css';
 		}
 		window.addEventListener("orientationchange", orientationChange, false);
 		window.addEventListener("resize", MobileResized, false);
@@ -124,9 +124,9 @@ function orientationChange()
 	$('#topmask').show();
 	getOrientation();
 	if (current_orientation === 'Portrait') {
-		styleEl.href = '../client_player/css/portrait.css';
+		styleEl.href = 'client_player/css/portrait.css';
 	} else if (current_orientation === 'Landscape') {
-		styleEl.href = '../client_player/css/landscape.css';
+		styleEl.href = 'client_player/css/portrait.css';
 	}
 }
 
@@ -138,7 +138,7 @@ function getOrientation() {
 		break;
 		case -90: // Landscape: turned 90 degrees counter-clockwise
 		case 90: // Landscape: turned 90 degrees clockwise
-		current_orientation = 'Landscape';
+		current_orientation = 'portrait';
 		break;
 		default:
 		break;
