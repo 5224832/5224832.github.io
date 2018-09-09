@@ -6,18 +6,22 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta http-equiv="Pragma" content="no-cache">
 	<title>刘剑北</title>
+	<meta name=”author” content=”刘剑北 email:liu@jianbei.xyz”/>
 	<meta property="og:site_name" content="jianbei">
 	<link href="favicon.ico" rel="Shortcut Icon">
 	<meta property="og:title" content="jianbei">
 	<meta property="og:description" content="www.jianbei.xyz">
 	<meta property="og:url" content="http://www.jianbei.xyz">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name=”apple-itunes-app” content=”app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL”>
+	<meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
 	<link rel="stylesheet" type="text/css" href="images/main_style.css" title="wsite-theme-css">
-
 	<link id='style' rel="stylesheet" media="screen" href="client_player/css/portrait.css">
 	<!--[if lt IE 9]>
-	<link rel="stylesheet" media="screen" href="client_player/css/ie.css">
+	
 	<![endif]-->
-	<script src="client_player/js/jquery-1.9.1.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="client_player/js/jplayer/jquery.jplayer.min.js"></script>
 	<script src="client_player/js/jplayer/jquery.lrc2.js"></script>
 	<script src="client_player/js/nouislider/jquery.nouislider.min.js"></script>
@@ -29,8 +33,8 @@
 		Init({
 			musicUrl: "https://www.ztgyjj.com/uploadImgs/zhuimengderen.mp3",
 			lrcUrl: "",
-			largeImgUrl: "images/1484211.jpeg" === "" ? defaultAlbumUrl : "images/1484211.jpeg",
-			middleImgUrl: "images/1484211.jpeg" === "" ? defaultAlbumUrl : "images/1484211.jpeg",
+			largeImgUrl: "images/jack.png" === "" ? defaultAlbumUrl : "images/jack.png",
+			middleImgUrl: "images/jack.png" === "" ? defaultAlbumUrl : "images/jack.png",
 			smallImgUrl: "client_player/images/big_ms_3212_1367130381564.jpg.auto.100x100.jpg" === "" ? defaultAlbumUrl : "client_player/images/big_ms_3212_1367130381564.jpg.auto.100x100.jpg",
 			downUrl: "https://www.ztgyjj.com/uploadImgs/zhuimengderen.mp3",
 			carrierCode: 3,
@@ -43,13 +47,13 @@
 		* { margin: 0; padding: 0; }
 		html, body { height: 100%; width: 100%;background-color: black;}  
 		canvas { display: block; } 
-		#logowebkit{
+		.logowebkit{
 		    width:210px;     
 		    height: 210px;     
 		    border-radius:140px;     
 		    -webkit-animation:run 6s linear 0s infinite;
 		}     
-		#logowebkit:hover{
+		.logowebkit:hover{
 		    -webkit-animation-play-state:paused;     
 		}     
 		@-webkit-keyframes run{     
@@ -75,7 +79,7 @@
 		<div class="spaceholder holder-2"></div>
 
 		<div id="album">
-			<div class="cd"><img></div>
+			<div class="cd" id="logowebkit"><img></div>
 			<div class="jp-button-group">
 				<span class="jp-play"><img src="client_player/images/play.png"></span>
 				<span class="jp-pause"><img src="client_player/images/pause.png"></span>
@@ -112,6 +116,11 @@
 					</li>
 					<li>
 						<a href="javascript:void();">
+							软件
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void();">
 							音乐
 						</a>
 					</li>
@@ -124,11 +133,6 @@
 					<li>
 						<a href="javascript:void();">
 							股市
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void();">
-							软件
 						</a>
 					</li>
 				</ul>
@@ -233,7 +237,29 @@
 		  canvas.height = height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; // 高
 		  var ctx = canvas.getContext('2d'); // 返回一个用于在画布上绘图的环境
 		  var num = Math.ceil(width / 10); // 把屏幕的宽度分割成num份 每列的宽度是10px
+		  var yNum = Math.ceil(height / 10);
 		  var y = Array(num).join(0).split('');
+		  var initBg = function() {
+		        ctx.fillStyle = 'rgba(0,0,0,.05)'; //核心代码，创建黑色背景，透明度为0.05的填充色。
+		        ctx.fillRect(0, 0, width, height);
+		        ctx.fillStyle = '#0f0'; //设置了字体颜色为绿色
+		        ctx.font = '10px Microsoft YaHei';//设置字体大小与family
+		        for (j = 1; j < yNum; j++) { // y
+		        	for(i = 0; i < num; i++) { // x
+			            var x = (i * 10) + 10;
+			            text = String.fromCharCode(65 + Math.random() * 62); // 字符
+			            var y1 = y[i];
+			            ctx.fillText(text, x, y1);
+			            if(y1 > Math.random() * 10 * height) {
+			                y[i] = 0;
+			            } else {
+			                y[i] = parseInt(y[i]) + 10;
+			            }
+			        }
+		        }
+
+		        
+		    }
 		  var draw = function() {
 		        ctx.fillStyle = 'rgba(0,0,0,.05)'; //核心代码，创建黑色背景，透明度为0.05的填充色。
 		        ctx.fillRect(0, 0, width, height);
@@ -251,11 +277,10 @@
 		            }
 		        }
 		    }
-		 
 		    ;(function(){
+		    	initBg();
 		        setInterval(draw, 100);
 		    })();
-		 
 		}
 	</script>
 </body>
